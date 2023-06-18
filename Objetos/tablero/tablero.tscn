@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcygmwtk4uub4"]
+
+[ext_resource type="Texture2D" uid="uid://cbktv1ahmj1kb" path="res://Objetos/tablero/sprite.png" id="1_gbbeh"]
+
+[node name="Tablero" type="Node2D"]
+position = Vector2(960, 540)
+scale = Vector2(0.8, 0.8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_gbbeh")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3rrtahge47r6"]
+
+[ext_resource type="Script" path="res://Escenas/partida/partida.gd" id="1_b5fcn"]
+[ext_resource type="PackedScene" uid="uid://dcygmwtk4uub4" path="res://Objetos/tablero/tablero.tscn" id="1_fr0pc"]
+[ext_resource type="PackedScene" uid="uid://dwtej6wa42acs" path="res://Objetos/jugador/jugador.tscn" id="2_mdh7d"]
+
+[node name="Partida" type="Node2D"]
+script = ExtResource("1_b5fcn")
+
+[node name="Tablero" parent="." instance=ExtResource("1_fr0pc")]
+position = Vector2(531, 538)
+scale = Vector2(0.9, 0.9)
+
+[node name="Jugador" parent="." instance=ExtResource("2_mdh7d")]
+position = Vector2(342, 874)

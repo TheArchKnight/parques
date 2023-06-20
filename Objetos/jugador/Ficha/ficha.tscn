@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://nuw835uhh3kk"]
+
+[ext_resource type="Script" path="res://Objetos/jugador/Ficha/ficha.gd" id="1_e35og"]
+[ext_resource type="Texture2D" uid="uid://dn4lyp1ewimka" path="res://Objetos/jugador/ficha.png" id="1_tm7en"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qnrk"]
+size = Vector2(954, 458)
+
+[node name="Ficha" type="CharacterBody2D"]
+script = ExtResource("1_e35og")
+color = Color(1, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tm7en")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-30, 490)
+shape = SubResource("RectangleShape2D_3qnrk")
+metadata/_edit_lock_ = true

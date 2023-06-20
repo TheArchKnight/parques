@@ -1,12 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwtej6wa42acs"]
 
-[ext_resource type="Script" path="res://Scripts/jugador.gd" id="1_edswb"]
+[ext_resource type="Script" path="res://Objetos/jugador/jugador.gd" id="1_kky4u"]
+[ext_resource type="PackedScene" uid="uid://nuw835uhh3kk" path="res://Objetos/jugador/Ficha/ficha.tscn" id="2_j0wuq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xcjo8"]
+[node name="Jugador" type="Node2D"]
+scale = Vector2(0.015, 0.015)
+script = ExtResource("1_kky4u")
 
-[node name="Jugador" type="CharacterBody2D"]
-script = ExtResource("1_edswb")
+[node name="Ficha1" parent="." instance=ExtResource("2_j0wuq")]
 
-[node name="Ficha" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_xcjo8")
-debug_color = Color(1, 0.00784314, 0.0470588, 0.419608)
+[node name="Ficha2" parent="." instance=ExtResource("2_j0wuq")]
+position = Vector2(1700, 0)
+
+[node name="Ficha3" parent="." instance=ExtResource("2_j0wuq")]
+position = Vector2(0, 2700)
+
+[node name="Ficha4" parent="." instance=ExtResource("2_j0wuq")]
+position = Vector2(1700, 2700)

@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm3mowun7n0a6"]
+
+[ext_resource type="Script" path="res://Escenas/main/main.gd" id="1_jh75e"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_jh75e")
+
+[node name="Jugar" type="Button" parent="."]
+offset_left = 740.0
+offset_top = 229.0
+offset_right = 1180.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 72
+text = "Jugar
+"
+
+[node name="Salir" type="Button" parent="."]
+offset_left = 740.0
+offset_top = 652.0
+offset_right = 1180.0
+offset_bottom = 808.0
+theme_override_font_sizes/font_size = 72
+text = "Salir
+"
+
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

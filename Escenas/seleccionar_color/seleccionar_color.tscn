@@ -1,7 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://n1qp4aij4ytg"]
+[gd_scene load_steps=4 format=3 uid="uid://n1qp4aij4ytg"]
 
 [ext_resource type="Script" path="res://Escenas/seleccionar_color/colores.gd" id="1_tc5qc"]
 [ext_resource type="Script" path="res://Escenas/seleccionar_color/jugar.gd" id="2_40nnj"]
+
+[sub_resource type="GDScript" id="GDScript_cw5vb"]
+script/source = "extends HSlider
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,24 +24,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="pregunta" type="Label" parent="."]
-layout_mode = 0
-offset_left = 183.0
-offset_top = 299.0
-offset_right = 856.0
-offset_bottom = 401.0
-theme_override_font_sizes/font_size = 72
-text = "Selecciona tu color:"
-
-[node name="colores" type="OptionButton" parent="."]
-layout_mode = 0
-offset_left = 1018.0
-offset_top = 290.0
-offset_right = 1470.0
-offset_bottom = 422.0
-theme_override_font_sizes/font_size = 60
-script = ExtResource("1_tc5qc")
 
 [node name="jugar" type="Button" parent="."]
 layout_mode = 0
@@ -39,6 +35,46 @@ theme_override_font_sizes/font_size = 72
 text = "¡Jugar!"
 script = ExtResource("2_40nnj")
 
-[connection signal="item_seleccionado" from="colores" to="jugar" method="_on_colores_item_seleccionado"]
-[connection signal="item_selected" from="colores" to="colores" method="_on_item_selected"]
+[node name="seleccion_color" type="Node2D" parent="."]
+
+[node name="pregunta_color" type="Label" parent="seleccion_color"]
+offset_left = 158.0
+offset_top = 307.0
+offset_right = 831.0
+offset_bottom = 409.0
+theme_override_font_sizes/font_size = 72
+text = "Selecciona tu color:"
+
+[node name="colores" type="OptionButton" parent="seleccion_color"]
+offset_left = 1018.0
+offset_top = 290.0
+offset_right = 1470.0
+offset_bottom = 422.0
+theme_override_font_sizes/font_size = 60
+script = ExtResource("1_tc5qc")
+
+[node name="seleccion_fichas" type="Node2D" parent="."]
+
+[node name="pregunta_fichas" type="Label" parent="seleccion_fichas"]
+offset_left = 151.0
+offset_top = 444.0
+offset_right = 944.0
+offset_bottom = 657.0
+theme_override_font_sizes/font_size = 72
+text = "Selecciona la cantidad 
+de fichas:"
+
+[node name="slider_fichas" type="HSlider" parent="seleccion_fichas"]
+offset_left = 1020.0
+offset_top = 525.0
+offset_right = 1469.0
+offset_bottom = 620.0
+min_value = 1.0
+max_value = 4.0
+value = 1.0
+script = SubResource("GDScript_cw5vb")
+
 [connection signal="pressed" from="jugar" to="jugar" method="_on_pressed"]
+[connection signal="item_seleccionado" from="seleccion_color/colores" to="jugar" method="_on_colores_item_seleccionado"]
+[connection signal="item_selected" from="seleccion_color/colores" to="seleccion_color/colores" method="_on_item_selected"]
+[connection signal="value_changed" from="seleccion_fichas/slider_fichas" to="jugar" method="_on_slider_fichas_value_changed"]

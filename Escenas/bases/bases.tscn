@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dkk46jtdkgh65"]
+
+[node name="Bases" type="Node2D"]
+
+[node name="Base1" type="Area2D" parent="."]
+position = Vector2(-185, 391.25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base1"]
+polygon = PackedVector2Array(46.25, -113.75, 93.75, 171.25, 85, 172.5, -210, 33.75, -212.5, 28.75)
+
+[node name="Base2" type="Area2D" parent="."]
+position = Vector2(205, 417.5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base2"]
+polygon = PackedVector2Array(-70, -135, 182.5, 5, 182.5, 11.25, -101.25, 147.5, -117.5, 147.5)
+
+[node name="Base 3" type="Area2D" parent="."]
+position = Vector2(478.75, 92.5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base 3"]
+polygon = PackedVector2Array(-172.5, -28.75, 96.25, -140, 101.25, -131.25, 31.25, 170, 20, 183.75)
+
+[node name="Base4" type="Area2D" parent="."]
+position = Vector2(368.75, -310)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base4"]
+polygon = PackedVector2Array(-121.25, 107.5, -38.75, -172.5, -31.25, -170, 162.5, 72.5, 166.25, 88.75)
+
+[node name="Base5" type="Area2D" parent="."]
+position = Vector2(2.5, -472.5)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base5"]
+polygon = PackedVector2Array(-2.5, 152.5, -171.25, -88.75, -165, -92.5, 147.5, -92.5, 162.5, -85)
+
+[node name="Base6" type="Area2D" parent="."]
+position = Vector2(-360, -301.25)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base6"]
+polygon = PackedVector2Array(-178.75, 77.5, 112.5, 95, 30, -181.25, 15, -175, -180, 70)
+
+[node name="Base7" type="Area2D" parent="."]
+position = Vector2(-452.5, 93.75)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Base7"]
+polygon = PackedVector2Array(-121.25, -137.5, 141.25, -31.25, -50, 183.75, -57.5, 182.5, -125, -122.5)

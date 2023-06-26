@@ -8,12 +8,16 @@ scale = Vector2(0.015, 0.015)
 script = ExtResource("1_kky4u")
 
 [node name="Ficha1" parent="." instance=ExtResource("2_j0wuq")]
+id = 1
 
 [node name="Ficha2" parent="." instance=ExtResource("2_j0wuq")]
 position = Vector2(1700, 0)
+id = 2
 
 [node name="Ficha3" parent="." instance=ExtResource("2_j0wuq")]
 position = Vector2(0, 2700)
+id = 3
 
 [node name="Ficha4" parent="." instance=ExtResource("2_j0wuq")]
 position = Vector2(1700, 2700)
+id = 4

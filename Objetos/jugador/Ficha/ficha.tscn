@@ -1,21 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://nuw835uhh3kk"]
+[gd_scene load_steps=5 format=3 uid="uid://nuw835uhh3kk"]
 
 [ext_resource type="Script" path="res://Objetos/jugador/Ficha/ficha.gd" id="1_e35og"]
 [ext_resource type="Texture2D" uid="uid://dn4lyp1ewimka" path="res://Objetos/jugador/ficha.png" id="1_tm7en"]
+[ext_resource type="Script" path="res://Objetos/jugador/Ficha/Seleccion.gd" id="3_3ponk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qnrk"]
-size = Vector2(954, 458)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wutij"]
+radius = 563.833
+height = 2515.92
 
 [node name="Ficha" type="CharacterBody2D"]
+position = Vector2(299, 130)
+scale = Vector2(-0.0319243, 0.0298847)
 script = ExtResource("1_e35og")
 color = Color(1, 0, 0, 1)
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_tm7en")
 metadata/_edit_lock_ = true
 
+[node name="Seleccion" type="Area2D" parent="."]
+script = ExtResource("3_3ponk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Seleccion"]
+position = Vector2(-62.6475, 0)
+shape = SubResource("CapsuleShape2D_wutij")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-30, 490)
-shape = SubResource("RectangleShape2D_3qnrk")
-metadata/_edit_lock_ = true
+position = Vector2(-62.6484, 0)
+shape = SubResource("CapsuleShape2D_wutij")

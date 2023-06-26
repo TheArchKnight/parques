@@ -1,15 +1,63 @@
-[gd_scene load_steps=4 format=3 uid="uid://b3rrtahge47r6"]
+[gd_scene load_steps=8 format=3 uid="uid://b3rrtahge47r6"]
 
 [ext_resource type="Script" path="res://Escenas/partida/partida.gd" id="1_b5fcn"]
 [ext_resource type="PackedScene" uid="uid://dcygmwtk4uub4" path="res://Objetos/tablero/tablero.tscn" id="1_fr0pc"]
-[ext_resource type="PackedScene" uid="uid://dwtej6wa42acs" path="res://Objetos/jugador/jugador.tscn" id="2_mdh7d"]
+[ext_resource type="Script" path="res://Objetos/jugador/jugador.gd" id="5_jligb"]
+[ext_resource type="Texture2D" uid="uid://dl7kw4lhqvhe6" path="res://Sprites/dados.jpg" id="5_tamjp"]
+[ext_resource type="Script" path="res://Escenas/partida/Dados.gd" id="6_1mvfp"]
+[ext_resource type="PackedScene" uid="uid://nuw835uhh3kk" path="res://Objetos/jugador/Ficha/ficha.tscn" id="6_axr2p"]
+[ext_resource type="Script" path="res://Escenas/partida/label2.gd" id="7_j4l18"]
 
 [node name="Partida" type="Node2D"]
 script = ExtResource("1_b5fcn")
 
 [node name="Tablero" parent="." instance=ExtResource("1_fr0pc")]
-position = Vector2(531, 538)
-scale = Vector2(0.9, 0.9)
+position = Vector2(492, 503)
 
-[node name="Jugador" parent="." instance=ExtResource("2_mdh7d")]
-position = Vector2(342, 874)
+[node name="Jugador" type="Node2D" parent="."]
+position = Vector2(329, 832)
+script = ExtResource("5_jligb")
+
+[node name="Ficha1" parent="Jugador" instance=ExtResource("6_axr2p")]
+position = Vector2(-25, -21)
+id = 1
+
+[node name="Ficha2" parent="Jugador" instance=ExtResource("6_axr2p")]
+position = Vector2(28, -15)
+id = 2
+
+[node name="Ficha3" parent="Jugador" instance=ExtResource("6_axr2p")]
+position = Vector2(-35, 9)
+id = 3
+
+[node name="Ficha4" parent="Jugador" instance=ExtResource("6_axr2p")]
+position = Vector2(22, 19)
+id = 4
+
+[node name="Dados" type="TextureButton" parent="."]
+offset_left = 1062.0
+offset_top = 138.0
+offset_right = 1540.0
+offset_bottom = 377.0
+texture_normal = ExtResource("5_tamjp")
+script = ExtResource("6_1mvfp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 970.0
+offset_top = 43.0
+offset_right = 1688.0
+offset_bottom = 118.0
+theme_override_font_sizes/font_size = 48
+text = "Presiona los dados para lanzar!"
+
+[node name="label2" type="Label" parent="."]
+offset_left = 1031.0
+offset_top = 426.0
+offset_right = 1542.0
+offset_bottom = 540.0
+theme_override_font_sizes/font_size = 40
+text = "Resultado: "
+script = ExtResource("7_j4l18")
+
+[connection signal="cambiar_texto" from="Dados" to="label2" method="_on_dados_cambiar_texto"]
+[connection signal="pressed" from="Dados" to="Dados" method="_on_pressed"]

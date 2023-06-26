@@ -1,11 +1,290 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcygmwtk4uub4"]
+[gd_scene load_steps=6 format=3 uid="uid://dcygmwtk4uub4"]
 
+[ext_resource type="Script" path="res://Objetos/tablero/tablero.gd" id="1_eflxc"]
 [ext_resource type="Texture2D" uid="uid://cbktv1ahmj1kb" path="res://Objetos/tablero/sprite.png" id="1_gbbeh"]
+[ext_resource type="PackedScene" uid="uid://cmcfsqny34ec2" path="res://Escenas/base/base.tscn" id="3_5uyct"]
+[ext_resource type="Script" path="res://Escenas/base/base.gd" id="3_wt1ov"]
+[ext_resource type="Script" path="res://Escenas/casilla/casilla.gd" id="4_cwfx0"]
 
 [node name="Tablero" type="Node2D"]
 position = Vector2(960, 540)
 scale = Vector2(0.8, 0.8)
+script = ExtResource("1_eflxc")
+metadata/_edit_lock_ = true
 
 [node name="fondo" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_gbbeh")
+metadata/_edit_lock_ = true
+
+[node name="base1" type="Node2D" parent="."]
+script = ExtResource("3_wt1ov")
+id = 1
+metadata/_edit_lock_ = true
+
+[node name="Carcel" type="Area2D" parent="base1"]
+position = Vector2(-200, 403.75)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Carcel"]
+polygon = PackedVector2Array(63.75, -123.75, 107.5, 160, 101.25, 162.5, -196.25, 18.75)
+metadata/_edit_lock_ = true
+
+[node name="Casilla" type="Area2D" parent="base1"]
+position = Vector2(-388.75, 387.5)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(2.9754, -29.0283, 31.0456, 7.48523, -12.4632, 24.7277, -41.9369, -7.7287)
+
+[node name="Casilla15" type="Area2D" parent="base1"]
+position = Vector2(-425, 338.75)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla15"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(-2.63861, -30.0425, 33.8527, 7.48523, -6.84912, 27.7705, -41.9369, -7.7287)
+metadata/_edit_lock_ = true
+
+[node name="Casilla16" type="Area2D" parent="base1"]
+position = Vector2(-383.75, 310)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla16"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(-6.84912, -30.0424, 32.4491, 6.47107, -6.84912, 26.7563, -44.7439, -9.75714)
+metadata/_edit_lock_ = true
+
+[node name="Casilla17" type="Area2D" parent="base1"]
+position = Vector2(-348.75, 277.5)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla17"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(-1.23505, -28.014, 36.6597, 7.48523, -1.23505, 29.799, -39.1298, -7.7287)
+metadata/_edit_lock_ = true
+
+[node name="Casilla18" type="Area2D" parent="base1"]
+position = Vector2(-307.5, 247.5)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla18"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(-4.04224, -28.014, 35.256, 7.48523, -2.63873, 29.799, -41.937, -7.7287)
+metadata/_edit_lock_ = true
+
+[node name="Casilla19" type="Area2D" parent="base1"]
+position = Vector2(-270, 223.75)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla19"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(-1.23511, -34.0995, 36.6595, 3.42822, -1.23511, 23.7134, -40.5334, -12.8)
+metadata/_edit_lock_ = true
+
+[node name="Casilla20" type="Area2D" parent="base1"]
+position = Vector2(-228.75, 186.25)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla20"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(-4.04211, -28.0139, 35.2562, 8.49951, -2.63855, 29.7991, -41.9369, -7.7287)
+metadata/_edit_lock_ = true
+
+[node name="Casilla21" type="Area2D" parent="base1"]
+position = Vector2(-190, 156.25)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla21"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(-2.63855, -28.014, 35.2562, 9.51379, -1.23511, 29.799, -41.9369, -7.7287)
+metadata/_edit_lock_ = true
+
+[node name="Casilla2" type="Area2D" parent="base1"]
+position = Vector2(-346.25, 363.75)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla2"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(1.5719, -29.0283, 29.6421, 7.48523, -9.65619, 24.7277, -37.7263, -12.8)
+metadata/_edit_lock_ = true
+
+[node name="Casilla3" type="Area2D" parent="base1"]
+position = Vector2(-303.75, 340)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla3"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(2.9754, -29.0283, 29.642, 7.48529, -12.4632, 24.7277, -39.1299, -11.7857)
+metadata/_edit_lock_ = true
+
+[node name="Casilla4" type="Area2D" parent="base1"]
+position = Vector2(-261.25, 316.25)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla4"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(2.97546, -28.0139, 33.8527, 9.51385, -11.0596, 25.7421, -40.5333, -11.7856)
+metadata/_edit_lock_ = true
+
+[node name="Casilla5" type="Area2D" parent="base1"]
+position = Vector2(-216.25, 292.5)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla5"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(1.57202, -28.0139, 31.0456, 7.48523, -12.4632, 24.7277, -39.1298, -11.7857)
+metadata/_edit_lock_ = true
+
+[node name="Casilla6" type="Area2D" parent="base1"]
+position = Vector2(-172.5, 267.5)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla6"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(2.97546, -26.9998, 31.0456, 7.48523, -12.4632, 24.7277, -39.1299, -10.7715)
+metadata/_edit_lock_ = true
+
+[node name="Casilla7" type="Area2D" parent="base1"]
+position = Vector2(-131.25, 236.25)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla7"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(32.4491, -32.071, 11.3965, 1.39966, -9.65613, 30.8133, -37.7263, -5.7002)
+metadata/_edit_lock_ = true
+
+[node name="Casilla8" type="Area2D" parent="base1"]
+position = Vector2(-96.25, 247.5)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla8"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(0.168457, -39.1708, 15.6071, 17.6279, -39.1298, 23.7134, -22.2877, -4.68591)
+metadata/_edit_lock_ = true
+
+[node name="Casilla9" type="Area2D" parent="base1"]
+position = Vector2(-98.75, 300)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla9"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(18.4141, -18.8856, 28.2386, 15.5994, -26.4983, 21.685, -34.9193, -12.8)
+metadata/_edit_lock_ = true
+
+[node name="Casilla10" type="Area2D" parent="base1"]
+position = Vector2(-86.25, 351.25)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla10"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(15.6071, -20.9141, 24.0281, 13.5708, -32.1122, 20.6707, -39.1298, -14.8286)
+metadata/_edit_lock_ = true
+
+[node name="Casilla11" type="Area2D" parent="base1"]
+position = Vector2(-82.5, 398.75)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla11"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(19.8175, -18.8856, 29.6421, 16.6136, -25.0947, 22.6992, -33.5157, -12.8)
+metadata/_edit_lock_ = true
+
+[node name="Casilla12" type="Area2D" parent="base1"]
+position = Vector2(-71.25, 450)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla12"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(18.4141, -21.9283, 28.2386, 13.5709, -30.7087, 19.6564, -37.7263, -13.8143)
+metadata/_edit_lock_ = true
+
+[node name="Casilla13" type="Area2D" parent="base1"]
+position = Vector2(-61.25, 495)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla13"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(18.4141, -18.8857, 26.8351, 15.5993, -32.1123, 22.6991, -40.5333, -10.7715)
+metadata/_edit_lock_ = true
+
+[node name="Casilla14" type="Area2D" parent="base1"]
+position = Vector2(-58.75, 550)
+script = ExtResource("4_cwfx0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="base1/Casilla14"]
+position = Vector2(-1.4, -2.975)
+scale = Vector2(0.890625, 1.23242)
+polygon = PackedVector2Array(25.4316, -22.9426, 25.4316, 14.5851, -27.9017, 14.5851, -33.5157, -14.8286)
+metadata/_edit_lock_ = true
+
+[node name="base5" parent="." instance=ExtResource("3_5uyct")]
+position = Vector2(0, 2.5)
+rotation = -1.82071
+id = 5
+
+[node name="base4" parent="." instance=ExtResource("3_5uyct")]
+position = Vector2(5, -2.5)
+rotation = -2.72017
+id = 4
+
+[node name="base2" parent="." instance=ExtResource("3_5uyct")]
+position = Vector2(5, -12.5)
+rotation = -3.61301
+id = 2
+
+[node name="base7" parent="." instance=ExtResource("3_5uyct")]
+position = Vector2(-8.75, -7.5)
+rotation = -4.48783
+id = 7
+
+[node name="base6" parent="." instance=ExtResource("3_5uyct")]
+position = Vector2(-7.5, -10)
+rotation = -5.40353
+id = 6
+
+[node name="base3" parent="." instance=ExtResource("3_5uyct")]
+rotation = -0.906194
+id = 3
+
+[connection signal="body_entered" from="base1/Casilla" to="base1/Casilla" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla15" to="base1/Casilla15" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla16" to="base1/Casilla16" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla17" to="base1/Casilla17" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla18" to="base1/Casilla18" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla19" to="base1/Casilla19" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla20" to="base1/Casilla20" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla21" to="base1/Casilla21" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla2" to="base1/Casilla2" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla3" to="base1/Casilla3" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla4" to="base1/Casilla4" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla5" to="base1/Casilla5" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla6" to="base1/Casilla6" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla7" to="base1/Casilla7" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla8" to="base1/Casilla8" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla9" to="base1/Casilla9" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla10" to="base1/Casilla10" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla11" to="base1/Casilla11" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla12" to="base1/Casilla12" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla13" to="base1/Casilla13" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="base1/Casilla14" to="base1/Casilla14" method="_on_body_entered" flags=18]
